@@ -51,7 +51,6 @@ class SinglyLinkedList
   def reverse_using_iteration
     node = @head
     prev = nil
-
     until node.nil?
       next_node = node.next
       node.next = prev
@@ -65,15 +64,12 @@ class SinglyLinkedList
       @head = node
       return
     end
-
     reverse_using_recursion(node.next)
-
     node.next.next = node
     node.next = nil
   end
   def print(&block)
     node = @head
-
     until node.nil?
       node = node.next
       yield node
